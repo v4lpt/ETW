@@ -1,13 +1,18 @@
-Welcome to Ease The Waiting. This app is designed to ease the waiting for scheduled events in the future, such as special holidays, your birthday, or anything else. 🎉🎂🌴
+Welcome to Ease The Waiting. This app is designed to ease the waiting for scheduled events in the future, such as special holidays, your birthday, or anything else. 🎉🎂🌴 
+It displays the number of days until the event and (optionally) a personal background image for each event.
 
 <b>How it works:</b>
-* If no events are added, the app guides you on what to do. Just click the red button!
-* Add an event by choosing a title, date, and optionally, a custom image. 📝🗓️🖼️
-* To add more events, tap the "+" sign in the bottom left, or scroll to the bottom and click the "Add New Event" button.
+* Just tap the big red button ("Add Event") to add your first event.
+* In the next screen:
+	* Enter title and date 
+	* Optionally, choose a custom background image for this event by tapping the preview field beneath title and date. 📝🗓️🖼️
+	* Save event by tapping the big red button that says "Save".
+* You will now be back on the main screen and see your event 
+* To add more events, either tap the "+" sign in the bottom left, or scroll to the bottom of the event list and tap the "Add New Event" button.
 * For a visually appealing experience like in the screenshots, use attractive images!
 
 <b>Features:</b>
-* 🔤 <b>Text size options</b> - Switch between big and small text modes by clicking the A/B button next to the "+" button.
+* 🔤 <b>2 visual presets</b> - Switch between big and small text modes by tapping the A, resp. B button next to the "+" button in the bottom line.
 * ✏️ <b>Edit existing events</b> - Tap on an event to modify its details.
 * 🔴 <b>Live preview</b> - See how your event will look as you add or edit it.
 * 🚀 <b>Simple introduction</b> - The app provides clear instructions if no events are added.

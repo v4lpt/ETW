@@ -10,8 +10,8 @@ android {
         applicationId = "v4lpt.vpt.f036.esw"
         minSdk = 26
         targetSdk = 34
-        versionCode = 9
-        versionName = "0.9.0-Beta"
+        versionCode = 100
+        versionName = "1.0.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

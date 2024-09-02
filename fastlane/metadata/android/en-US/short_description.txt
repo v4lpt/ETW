@@ -1,1 +1,1 @@
-A mix between a calendar and a clock that eases waiting for events 
+A mix between a calendar and a clock that makes you wait faster.
