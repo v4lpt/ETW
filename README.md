@@ -7,7 +7,7 @@ Welcome to Ease The Waiting. This app is designed to ease the waiting for schedu
 [<img src="https://raw.githubusercontent.com/v4lpt/GDP/master/Badge/github.png" alt="Get it on GitHub" height="80">](https://github.com/v4lpt/ETW/releases/latest)
 
 ## How it works 
-* Just tap the big red button ("Add Event") to add your first event.
+* Tap the big red button ("Add Event") to add your first event.
 * In the next screen:
 	* Enter title and date 
 	* Optionally, choose a custom background image for this event by tapping the preview field beneath title and date. 📝🗓️🖼️
