@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">VPT#036-ETW - Ease The Waiting</string>
+    <string name="powertools">Valentin\'s PowerTools #036</string>
+    <string name="app_name_show">Ease The Waiting</string>
+    <string name="introduction">"Welcome to Ease The Waiting. This app is designed to ease the waiting for scheduled events in the future, such as special holidays, your birthday, or anything else.\n\n<b><font color="#efcac2">To add yor first event, tap the big red button below. To add further events, tap the \"+\" sign in the bottom left, or tap the \"Add Event\" field at the bottom of your event list.</font></b>\n\nYou will be able to choose title and date (in ISO format). To select a custom background image, simply tap the preview field in the add-event-screen.\n\nYour data are yours. Everything is calculated and saved locally. Nothing is sent. </string>
+
+    <string name="introduction2">Nice! You figured it out. If you now want to edit this event, simply tap on it and you\'ll be able to edit it. If you want to add more events, tap the \"+\" sign again.</string>
+    <string name="add_event">Add Event!</string>
+    <string name="LICENSE">
+        Copyright 2024 Valentin\'s PowerTools\n\nThis program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along with this program. If not, see\nhttps://www.gnu.org/licenses.\n\nHere is the github link:\nhttps://github.com/v4lpt/ETW/
+
+    </string>
+    <string name="copy">Copyright and License Information</string>
+    <string name="default_preview_title">Tap for custom image</string>
+</resources>

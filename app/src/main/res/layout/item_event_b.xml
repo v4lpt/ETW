@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    app:cardCornerRadius="16dp"
+    app:cardElevation="8dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <FrameLayout
+            android:id="@+id/titleContainer"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="16dp">
+
+            <v4lpt.vpt.f036.esw.OutlinedTextView
+                android:id="@+id/titleTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:padding="4dp"
+                android:fontFamily="monospace"
+                android:textSize="24sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:ellipsize="end" />
+        </FrameLayout>
+
+        <v4lpt.vpt.f036.esw.OutlinedTextView
+            android:id="@+id/dateTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/titleContainer"
+            android:maxLines="1"
+            android:layout_marginStart="17dp"
+            android:padding="4dp"
+            android:layout_marginTop="-4dp"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@color/hellgelb" />
+
+        <v4lpt.vpt.f036.esw.OutlinedTextView
+            android:id="@+id/daysLeftTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="4dp"
+            android:padding="4dp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:textSize="30sp"
+            android:textColor="@color/hellgelb" />
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

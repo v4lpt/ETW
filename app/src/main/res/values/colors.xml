@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="vptred">#FF0000</color>
+    <color name="vptgreen">#006666</color>
+    <color name="vptbackground">#444654</color>
+    <color name="vptblue">#1010AF</color>
+    <color name="vptrose">#efcac2</color>
+    <color name="vptdarkgray">#343541</color>
+    <color name="vptdarkergray">#2B2B30</color>
+    <color name="hellgelb">#FFFFFF</color>
+
+
+</resources>
