@@ -48,8 +48,15 @@ public class PreviewEventAdapter extends RecyclerView.Adapter<PreviewEventAdapte
         if (previewEvent != null) {
             holder.titleTextView.setText(previewEvent.getTitle());
             long daysLeft = previewEvent.getDaysLeft();
-            holder.daysLeftTextView.setText(daysLeft + " days left");
-
+            String daysText;
+            if (daysLeft < 0) {
+                daysText = Math.abs(daysLeft) + (Math.abs(daysLeft) == 1 ? " day ago" : " days ago");
+            } else if (daysLeft == 0) {
+                daysText = "Today";
+            } else {
+                daysText = daysLeft + (daysLeft == 1 ? " day left" : " days left");
+            }
+            holder.daysLeftTextView.setText(daysText);
             String formattedDate = previewEvent.getDate().format(dateFormatter);
             holder.dateTextView.setText(formattedDate);
 

@@ -65,8 +65,15 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
             eventHolder.titleTextView.setText(event.getTitle());
             long daysLeft = event.getDaysLeft();
-            eventHolder.daysLeftTextView.setText(daysLeft + " days left");
-
+            String daysText;
+            if (daysLeft < 0) {
+                daysText = Math.abs(daysLeft) + (Math.abs(daysLeft) == 1 ? " day ago" : " days ago");
+            } else if (daysLeft == 0) {
+                daysText = "Today";
+            } else {
+                daysText = daysLeft + (daysLeft == 1 ? " day left" : " days left");
+            }
+            eventHolder.daysLeftTextView.setText(daysText);
             String formattedDate = event.getDate().format(dateFormatter);
             eventHolder.dateTextView.setText(formattedDate);
 
