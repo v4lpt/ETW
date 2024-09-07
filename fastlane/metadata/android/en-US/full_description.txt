@@ -2,6 +2,7 @@ Welcome to Ease The Waiting. This app is designed to ease the waiting for schedu
 It displays the number of days until the event and (optionally) a personal background image for each event.
 
 <b>How it works:</b>
+
 * Just tap the big red button ("Add Event") to add your first event.
 * In the next screen:
 	* Enter title and date 
@@ -12,6 +13,7 @@ It displays the number of days until the event and (optionally) a personal backg
 * For a visually appealing experience like in the screenshots, use attractive images!
 
 <b>Features:</b>
+
 * 🔤 <b>2 visual presets</b> - Switch between big and small text modes by tapping the A, resp. B button next to the "+" button in the bottom line.
 * ✏️ <b>Edit existing events</b> - Tap on an event to modify its details.
 * 🔴 <b>Live preview</b> - See how your event will look as you add or edit it.
