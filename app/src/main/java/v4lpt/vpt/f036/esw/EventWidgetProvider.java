@@ -69,7 +69,7 @@ public class EventWidgetProvider extends AppWidgetProvider {
                 appWidgetManager.updateAppWidget(appWidgetId, views);
             }
         } else {
-            views.setTextViewText(R.id.widget_title, "No event selected");
+            views.setTextViewText(R.id.widget_title, "Please delete and re-add this event to widget it.");
             views.setTextViewText(R.id.widget_date, "");
             views.setTextViewText(R.id.widget_days_left, "");
             views.setImageViewResource(R.id.widget_background_image, R.drawable.default_event_background);
