@@ -6,8 +6,8 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.text.Editable;
-import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
@@ -21,7 +21,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import com.bumptech.glide.Glide;
+
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
@@ -205,6 +205,10 @@ public class AddEventActivity extends AppCompatActivity implements PreviewEventA
         Event newEvent;
 
         if (editEventId != -1) {
+            Event oldEvent = events.stream().filter(e -> e.getId() == editEventId).findFirst().orElse(null);
+            if (oldEvent != null && oldEvent.getBackgroundImagePath() != null && !oldEvent.getBackgroundImagePath().equals(imagePath)) {
+                ImageStorageHelper.deleteImageFromInternalStorage(oldEvent.getBackgroundImagePath());
+            }
             newEvent = new Event(editEventId, title, date, imagePath);
             for (int i = 0; i < events.size(); i++) {
                 if (events.get(i).getId() == editEventId) {
@@ -228,8 +232,12 @@ public class AddEventActivity extends AppCompatActivity implements PreviewEventA
 
     private void deleteEvent() {
         List<Event> events = EventStorage.loadEvents(this);
-        boolean removed = events.removeIf(event -> event.getId() == editEventId);
-        if (removed) {
+        Event eventToDelete = events.stream().filter(e -> e.getId() == editEventId).findFirst().orElse(null);
+        if (eventToDelete != null) {
+            if (eventToDelete.getBackgroundImagePath() != null) {
+                ImageStorageHelper.deleteImageFromInternalStorage(eventToDelete.getBackgroundImagePath());
+            }
+            events.remove(eventToDelete);
             EventStorage.saveEvents(this, events);
             Intent resultIntent = new Intent();
             resultIntent.putExtra("event_id", editEventId);
@@ -250,8 +258,27 @@ public class AddEventActivity extends AppCompatActivity implements PreviewEventA
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && requestCode == PICK_IMAGE) {
-            selectedImageUri = data.getData();
-            updatePreview();
+            Uri selectedUri = data.getData();
+            if (selectedUri != null) {
+                String imagePath = ImageStorageHelper.saveImageToInternalStorage(this, selectedUri);
+                if (imagePath != null) {
+                    selectedImageUri = Uri.parse(imagePath);
+                    updatePreview();
+                } else {
+                    Toast.makeText(this, "Failed to save image", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
+    }
+    private void releaseUriPermission(String imagePath) {
+        if (imagePath != null) {
+            Uri imageUri = Uri.parse(imagePath);
+            try {
+                getContentResolver().releasePersistableUriPermission(imageUri,
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION);
+            } catch (SecurityException e) {
+                Log.e("AddEventActivity", "Failed to release URI permission: " + e.getMessage());
+            }
         }
     }
 

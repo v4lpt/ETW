@@ -10,8 +10,8 @@ android {
         applicationId = "v4lpt.vpt.f036.esw"
         minSdk = 26
         targetSdk = 34
-        versionCode = 101
-        versionName = "1.0.1"
+        versionCode = 110
+        versionName = "1.1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }

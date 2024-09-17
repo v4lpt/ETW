@@ -1,7 +1,6 @@
 package v4lpt.vpt.f036.esw;
 
 import android.content.Context;
-import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,6 +56,7 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
+
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
         if (holder instanceof EventViewHolder) {
@@ -78,14 +78,14 @@ public class EventAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             eventHolder.dateTextView.setText(formattedDate);
 
             if (event.getBackgroundImagePath() != null) {
-                Uri imageUri = Uri.parse(event.getBackgroundImagePath());
                 Glide.with(context)
-                        .load(imageUri)
+                        .load(event.getBackgroundImagePath())
                         .centerCrop()
                         .into(eventHolder.backgroundImageView);
             } else {
                 eventHolder.backgroundImageView.setImageResource(R.drawable.default_event_background);
             }
+
 
             holder.itemView.setOnClickListener(v -> {
                 if (onEventClickListener != null) {

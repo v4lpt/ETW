@@ -1,5 +1,7 @@
 package v4lpt.vpt.f036.esw;
 
+import android.appwidget.AppWidgetManager;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -55,8 +57,14 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.OnEv
         modeToggleButton.setOnClickListener(v -> toggleDisplayMode());
 
         updateDateBar();
-        loadEvents();
         updateDisplayMode();
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        loadEvents();
+        updateWidgets();
     }
 
     private void toggleDisplayMode() {
@@ -78,7 +86,6 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.OnEv
         recyclerView.setAdapter(null);
         recyclerView.setAdapter(eventAdapter);
     }
-
 
     private void openInfoFragment() {
         InfoFragment infoFragment = new InfoFragment();
@@ -138,17 +145,18 @@ public class MainActivity extends AppCompatActivity implements EventAdapter.OnEv
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK) {
             if (requestCode == ADD_EVENT_REQUEST || requestCode == EDIT_EVENT_REQUEST) {
-                if (data != null && data.getBooleanExtra("event_deleted", false)) {
-                    long deletedEventId = data.getLongExtra("event_id", -1);
-                    if (deletedEventId != -1) {
-                        eventList.removeIf(event -> event.getId() == deletedEventId);
-                        eventAdapter.updateEvents(eventList);
-                        updateBigAddEventButtonVisibility();
-                    }
-                } else {
-                    loadEvents();
-                }
+                loadEvents();
+                updateWidgets();
             }
         }
+    }
+
+    private void updateWidgets() {
+        AppWidgetManager appWidgetManager = AppWidgetManager.getInstance(this);
+        int[] appWidgetIds = appWidgetManager.getAppWidgetIds(new ComponentName(this, EventWidgetProvider.class));
+        Intent updateIntent = new Intent(this, EventWidgetProvider.class);
+        updateIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);
+        updateIntent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS, appWidgetIds);
+        sendBroadcast(updateIntent);
     }
 }

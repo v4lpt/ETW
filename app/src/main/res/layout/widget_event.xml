@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/widget_background">
+
+        <ImageView
+            android:id="@+id/widget_background_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <FrameLayout
+            android:id="@+id/widget_title_container"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp">
+
+            <TextView
+                android:id="@+id/widget_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                android:padding="4dp"
+                android:fontFamily="monospace"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:shadowColor="#000000"
+                android:shadowDx="2"
+                android:shadowDy="2"
+                android:shadowRadius="2" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/widget_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/widget_title_container"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-7dp"
+            android:padding="4dp"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2" />
+
+        <TextView
+            android:id="@+id/widget_days_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/widget_date"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="-7dp"
+            android:padding="4dp"
+            android:fontFamily="monospace"
+            android:textSize="18sp"
+            android:textColor="@android:color/white"
+            android:shadowColor="#000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="2" />
+
+    </RelativeLayout>
+</FrameLayout>

@@ -1,7 +1,7 @@
 package v4lpt.vpt.f036.esw;
 
 import android.content.Context;
-import android.net.Uri;
+import android.graphics.Bitmap;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -61,9 +61,8 @@ public class PreviewEventAdapter extends RecyclerView.Adapter<PreviewEventAdapte
             holder.dateTextView.setText(formattedDate);
 
             if (previewEvent.getBackgroundImagePath() != null) {
-                Uri imageUri = Uri.parse(previewEvent.getBackgroundImagePath());
                 Glide.with(context)
-                        .load(imageUri)
+                        .load(previewEvent.getBackgroundImagePath())
                         .centerCrop()
                         .into(holder.backgroundImageView);
             } else {

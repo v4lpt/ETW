@@ -27,6 +27,22 @@
             android:windowSoftInputMode="adjustNothing"
 
             />
+        <receiver android:name=".EventWidgetProvider" android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/event_widget_info" />
+        </receiver>
+        <service android:name=".WidgetUpdateService" />
+        <activity
+            android:name=".WidgetConfigurationActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
