@@ -1,0 +1,2 @@
+1.1.1 - minor bug fix
+- portrait images now don't get rotated if you save them
